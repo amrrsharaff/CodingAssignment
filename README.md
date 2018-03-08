@@ -1,4 +1,4 @@
-# Project Title
+# Currency Converter
 
 This program converts the currency used in a csv file. The entry is determined by the field variable
 and the exchange rate is determined by the multiplier variable when running the program.
