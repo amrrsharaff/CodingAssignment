@@ -1,7 +1,7 @@
 # Currency Converter
 
-This program converts the currency used in a csv file. The entry is determined by the field variable
-and the exchange rate is determined by the multiplier variable when running the program.
+This program converts the currency used in a csv file. The entry number is determined by the field variable
+and the exchange rate is determined by the multiplier variable when running the program through the command line.
 
 ## Getting Started
 
@@ -13,13 +13,12 @@ and the exchange rate is determined by the multiplier variable when running the 
 
 ### Prerequisites
 
-In order to run the program, you need:
-
-1- Python 2.7 
-To install, follow the guidelines on https://www.python.org/download/releases/2.7/
-2- ArgParse library (usually comes with python)
-To install, open the command line and run:
-pip install argparse
+**In order to run the program, you need:**
+- Python 2.7 
+- To install, follow the guidelines on https://www.python.org/download/releases/2.7/
+- ArgParse library (usually comes with python)
+- To install, open the command line and run:
+- pip install argparse
 
 ## Running the tests
 
