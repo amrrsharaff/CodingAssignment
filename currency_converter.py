@@ -22,20 +22,20 @@ def _validate_args():
     # Parse arguments and provide usage message
     parser=argparse.ArgumentParser(
         description='''Currency converter''')
-    parser.add_argument('--field', type=int, required=True, description="The column number of the entry "
+    parser.add_argument('field', type=int, help="The column number of the entry "
                                                                         "to be converted.")
-    parser.add_argument('--multiplier', type=float, required=True, description="Conversion rate/Currency exchange rate.")
-    parser.add_argument('--header', type=bool, description="False indicates the csv file has no header row.")
+    parser.add_argument('multiplier', type=float, help="Conversion rate/Currency exchange rate.")
+    parser.add_argument('--header', type=bool, help="False indicates the csv file has no header row.", default=True)
     args=parser.parse_args()
 
     header = False if args.header is False else True
-    # Return Multiplier, field
+    # Return Multiplier, field, header
     return args.multiplier, args.field, header
 
 
 def _convert_line(line, multiplier, field):
     """
-    This function returns a newline after changing the value in the field <field>.
+    This function returns a newline after converting the value in the column number<field>.
     Note that this function is used internally and should not be called by the user.
     Precondition: line is a row of a csv file
     Post-condition: the only changed value in <line> is the <field> column
@@ -77,6 +77,7 @@ def convert():
         # write the new_line to stdout
         new_line = _convert_line(line=line, multiplier=multiplier, field=field)
         sys.stdout.write(new_line)
+
 
 if __name__ == "__main__":
     convert()
