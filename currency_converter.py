@@ -35,7 +35,7 @@ def convert_line(line, multiplier, field):
     """
     This function returns a newline after changing the value in the field <field>.
     Precondition: line is a row of a csv file
-    Post-condition: the only changed value in <line> is the <field> entry
+    Post-condition: the only changed value in <line> is the <field> column
     :param line: string storing a row of the csv file
     :param multiplier: float storing currency exchange rate
     :param field: int storing the number of the entry that needs to be converted in the row
