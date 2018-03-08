@@ -8,7 +8,7 @@ and the exchange rate is determined by the multiplier variable when running the 
 **Open up the terminal on your computer and run the following commands sequentially:**
 - git clone
 - cd CodingAssignment
-- python currency_converter.py -field <field number> -multiplier <rate> (--header False)
+- python currency_converter.py -field [field number] -multiplier [rate] (--header False)
 
 
 ### Prerequisites
