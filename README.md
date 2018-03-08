@@ -15,9 +15,9 @@ and the exchange rate is determined by the multiplier variable when running the 
 
 **In order to run the program, you need:**
 - Python 2.7 
-- To install, follow the guidelines on https://www.python.org/download/releases/2.7/
-- ArgParse library (usually comes with python)
-- To install, open the command line and run:
+(To install, follow the guidelines on https://www.python.org/download/releases/2.7/)
+- ArgParse library
+(To install, open the command line and run)
 - pip install argparse
 
 ## Running the tests
