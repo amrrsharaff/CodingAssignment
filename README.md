@@ -6,7 +6,7 @@ and the exchange rate is determined by the multiplier variable when running the 
 ## Getting Started
 
 **Open up the terminal on your computer and run the following commands sequentially:**
-- git clone
+- git clone https://github.com/amrrsharaff/CodingAssignment.git
 - cd CodingAssignment
 - python currency_converter.py -field [field number] -multiplier [rate] (--header False)
 
