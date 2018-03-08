@@ -6,7 +6,7 @@ and the exchange rate is determined by the multiplier variable when running the 
 ## Getting Started
 
 Open up the terminal on your computer
-Run the following commands sequentially:
+Run the following commands sequentially
 git clone
 cd CodingAssignment
 python currency_converter.py -field <field number> -multiplier <rate> (--header False)
@@ -16,7 +16,7 @@ python currency_converter.py -field <field number> -multiplier <rate> (--header 
 
 In order to run the program, you need:
 
-1- Python 2.7
+1- Python 2.7 
 To install, follow the guidelines on https://www.python.org/download/releases/2.7/
 2- ArgParse library (usually comes with python)
 To install, open the command line and run:
