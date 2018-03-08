@@ -20,12 +20,15 @@ def validate_args():
     # Parse arguments and provide usage message
     parser=argparse.ArgumentParser(
         description='''Currency converter''')
-    parser.add_argument('--field', type=int, required=True)
-    parser.add_argument('--multiplier', type=float, required=True)
+    parser.add_argument('--field', type=int, required=True, description="The column number of the entry "
+                                                                        "to be converted.")
+    parser.add_argument('--multiplier', type=float, required=True, description="Conversion rate/Currency exchange rate.")
+    parser.add_argument('--header', type=bool, description="False indicates the csv file has no header row.")
     args=parser.parse_args()
 
+    header = False if args.header is False else True
     # Return Multiplier, field
-    return args.multiplier, args.field
+    return args.multiplier, args.field, header
 
 
 def convert_line(line, multiplier, field):
@@ -52,10 +55,12 @@ def convert_line(line, multiplier, field):
 
 
 if __name__ == "__main__":
-    multiplier, field = validate_args()
+    multiplier, field, header = validate_args()
+    # If the first line is a header line
     # Read the first_line and write it right after without change since it contains titles
-    first_line = sys.stdin.readline()
-    sys.stdout.write(first_line)
+    if header is True:
+        first_line = sys.stdin.readline()
+        sys.stdout.write(first_line)
     # Read the rest of the file
     file = sys.stdin.read()
     # Separate the lines of the file into a list
