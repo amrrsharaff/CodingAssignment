@@ -29,7 +29,7 @@ def _validate_args():
     """
     This function is used to provide the documentation and validate the arguments
     Note that this function is used internally and should not be called by the user.
-    :return: tuple where the first element is the multiplier and the second is the field number
+    :return: tuple containing the command line arguments
     """
     # Parse arguments and provide usage message
     parser=argparse.ArgumentParser(
