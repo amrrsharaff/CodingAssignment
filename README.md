@@ -1,6 +1,6 @@
 # Currency Converter
 
-This program converts the currency used in a csv file. The entry number is determined by the field variable
+This program converts the currency used in a csv file to one of the user's choice. The entry number is determined by the field variable
 and the exchange rate is determined by the multiplier variable when running the program through the command line.
 
 ## Getting Started
