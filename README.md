@@ -23,6 +23,7 @@ and the exchange rate is determined by the multiplier variable when running the 
 ## Running the tests
 
 To run the tests for the program, open the terminal and navigate to the CodingAssignment folder and run:
+- **python currency_converter.py 3 2 < test1.py > test1out.py**
 
 ## Deployment
 
