@@ -78,15 +78,21 @@ def convert(csv_file=None, output_file=None, multiplier=None, field=None, header
     :param csv_file: parameter storing the path to csv file being converted, if the variable is set to an
     existing file, this file is converted. Otherwise, convert reads from stdin
     :param output_file: if this parameter is set, the program writes its output to this path
+    :param multiplier: exchange rate
+    :param field: column number of value being converted
+    :param header: true if the first row is a header row and false if it is not
     """
+
     if csv_file is None or os.path.isfile(csv_file) is False:
         inputfile = sys.stdin
     else:
         inputfile = open(csv_file, 'r')
+
     if output_file is None:
         output = sys.stdout
     else:
         output = open(output_file, 'w')
+
     # If the first line is a header line
     # Read the first_line and write it right after without change since it contains titles
     if header is True:
@@ -94,11 +100,20 @@ def convert(csv_file=None, output_file=None, multiplier=None, field=None, header
         output.write(first_line)
     # Read the rest of the file
     file = inputfile.read()
+
     # Separate the lines of the file into a list
-    #lines = file.split('\r\n')
     lines = file.splitlines()
+
     # Go through each line in the file
     for i, line in enumerate(lines):
+        # Check if there are as many columns as there should be
+        # Rewrite the line if there is a conflict in the number of columns and go to next line
+        if len(line.split(",")) < field:
+            sys.stderr("Warning: On line number " + str(i + 1) + " the column number "
+                                                                 "is more than the number of columns.")
+            output.write(line)
+            continue
+
         # write the new_line to stdout
         new_line = _convert_line(line=line, multiplier=multiplier, field=field, i=i)
         output.write(new_line)
