@@ -19,6 +19,10 @@ The last command can be also run using input and output optional arguments as fo
 
 **python currency_converter.py -field [field number] -multiplier [rate] (--header False) -i [PATH TO SOURCE] -o [PATH TO NEW]**
 
+If there is any trouble running it with the last command please read the usage instructions by running the following command:
+
+**python currency_converter.py -h**
+
 
 ### Prerequisites
 
