@@ -53,6 +53,7 @@ This program can be easily integrated into other apps by importing the module an
 - (1) does not have the right number of entries
 - (2) has the field which should be converted as a non-numeric value.
 - The program leaves anything but the value being converted unchanged.
+- test2.csv is made for unit testing and can be used instead of test1 as above.
 
 ## Authors
 
