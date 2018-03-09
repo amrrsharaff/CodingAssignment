@@ -24,6 +24,7 @@ and the exchange rate is determined by the multiplier variable when running the 
 
 To run the tests for the program, open the terminal and navigate to the CodingAssignment folder and run:
 - **python currency_converter.py 3 2 < test1.py > test1out.py**
+You should be able to have a warning for non float entry, to confirm this warning, you can open the csv file called "test1.csv" and look at the entry which should be converted.
 
 ## Deployment
 
@@ -32,6 +33,12 @@ This program can be easily integrated into other apps by importing the module an
 ## Built With
 
 * [Python 2.7](https://www.python.org/download/releases/2.7)
+
+## Notes:
+- The program gives you a warning and does not cause any change for every line which:
+- (1) does not have the right number of entries
+- (2) has the field which should be converted as a non-numeric value.
+- The program leaves anything but the value being converted unchanged.
 
 ## Authors
 
