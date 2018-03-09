@@ -27,7 +27,7 @@ The last command can be also run using input and output optional arguments as fo
 (To install, follow the guidelines on https://www.python.org/download/releases/2.7/)
 - ArgParse library
 (To install, open the command line and run)
-- pip install argparse
+- **pip install argparse**
 
 ## Running the tests
 
