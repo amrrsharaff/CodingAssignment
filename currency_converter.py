@@ -45,7 +45,7 @@ def _validate_args():
 
     header = False if args.header is False else True
     # Return Multiplier, field, header
-    return args.multiplier, args.field, header, args.input, args.output
+    return args.multiplier, args.field, header, args.i, args.o
 
 
 def _convert_line(line, multiplier, field, i):
