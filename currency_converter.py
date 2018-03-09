@@ -3,6 +3,11 @@ import sys
 import os.path
 
 def is_float(string):
+    """
+    This function checks if string can be converted to a float
+    :param string: a string which is expected to be a float
+    :return: True if string is a float and False if it's not.
+    """
     try:
         float(string)
         return True
@@ -29,15 +34,18 @@ def _validate_args():
     # Parse arguments and provide usage message
     parser=argparse.ArgumentParser(
         description='''Currency converter''')
-    parser.add_argument('field', type=int, help="The column number of the entry "
-                                                                        "to be converted.")
-    parser.add_argument('multiplier', type=float, help="Conversion rate/Currency exchange rate.")
+    parser.add_argument('-field', type=int, required=True, help="The column number of the "
+                                                                "entry to be converted. (Required)")
+    parser.add_argument('-multiplier', type=float, required=True, help="Conversion rate/"
+                                                                       "Currency exchange rate. (Required)")
     parser.add_argument('--header', type=bool, help="False indicates the csv file has no header row.", default=True)
+    parser.add_argument('-i', type=str, help="Input csv file", default=None)
+    parser.add_argument('-o', type=str, help="Output csv file", default=None)
     args=parser.parse_args()
 
     header = False if args.header is False else True
     # Return Multiplier, field, header
-    return args.multiplier, args.field, header
+    return args.multiplier, args.field, header, args.input, args.output
 
 
 def _convert_line(line, multiplier, field, i):
@@ -120,5 +128,5 @@ def convert(csv_file=None, output_file=None, multiplier=None, field=None, header
 
 
 if __name__ == "__main__":
-    multiplier, field, header = _validate_args()
-    convert(csv_file=None, output_file=None, multiplier=multiplier, field=field, header=True)
+    multiplier, field, header, input_file, output_file = _validate_args()
+    convert(csv_file=input_file, output_file=output_file, multiplier=multiplier, field=field, header=True)
